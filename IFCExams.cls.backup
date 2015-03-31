@@ -59,7 +59,6 @@
 \SetKwComment{Comentario}{// }{} 
 
 %%% Preamble commands (as title, author, ...)
-\newcommand{\class}[1]{\newcommand{\doc@class}{#1}}
 \newcommand{\subject}[1]{\newcommand{\doc@subject}{#1}}
 \newcommand{\order}[1]{\newcommand{\doc@order}{#1}}
 
@@ -100,9 +99,8 @@
 % Header configuration
 \fancyhead[R]{
   \@author \\
-  \doc@class \\
-  \doc@name~\ifthenelse{\isundefined{\doc@order}}{}{\doc@order} \\
-  \doc@subject \\
+  Fundamentos de Lógica e Algoritmos \\
+  \doc@name~\ifthenelse{\isundefined{\doc@order}}{}{\doc@order}~- \doc@subject\\
   \@date}
 \fancyhead[L]{\includegraphics[width=5cm]{logo-ifc-parcial-nova-concordia.pdf}}
 \addtolength{\headheight}{70pt}
@@ -115,12 +113,5 @@
 }
 \renewcommand{\maketitle}{
   \ifthenelse{\equal{\doc@type}{exam}}{\identification}{}
-  \ifthenelse{\equal{\doc@type}{task}}{
-    \begin{center}
-     \Huge\textbf{\doc@name~\ifthenelse{\isundefined{\doc@order}}{}{\doc@order}}
-     \vspace{1cm}
-    \end{center}
-
-  }{}
 }
 \renewcommand{\@maketitle}{}

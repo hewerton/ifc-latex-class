@@ -1,0 +1,85 @@
+\documentclass[exam]{IFCExams}
+
+\title{Fundamentos de Lógica e Algoritmos}
+\subject{Estruturas sequenciais e condicionais}
+\author{Prof. Me. Hewerton Enes de Oliveira}
+\order{1}
+%\email{hewerton.oliveira@concordia.ifc.edu.br}
+%\place{Instituto Federal Catarinense - Campus Concórdia}
+
+  \begin{document}
+  
+  \begin{exeenv}{3}
+    Analise o algoritmo a seguir e determine qual será a saída apresentada na tela do usuário.
+  
+    \begin{algorithm}[H]
+    \Inicio{
+      
+      \Declare valor1, valor2, resultado \Int\; 
+      
+      valor1 = 2\;
+      valor2 = 3\;
+      resultado = valor2 \% valor1\;
+      valor1 = valor2 / valor1\;
+      
+      resultado = resultado + valor1\;
+      
+      \eSe{(resultado \% 2) == 0}
+      {
+      resultado = (valor1 * 2) + 5\;
+      }
+      {
+      resultado = (valor1 - 1) + 5\;
+      }
+      
+      resultado = valor1 + valor2\;
+      
+      \BlankLine
+      
+      \Escreva ``O valor do resultado é:'', resultado\;    
+    }
+    \end{algorithm}
+    ~\newline
+  \end{exeenv}
+  
+  
+  \question{3}{
+  Faça um algoritmo que receba dois valores inteiros (num1 e num2) e mostre para o usuário se num1 é divisível por num2.
+  }
+  
+  ~\newline
+  
+  \begin{exeenv}{4}
+  Uma empresa decidiu dar uma gratificação de Natal a seus funcinários, baseada no número de horas extras e no número de horas que o funcionário
+  faltou ao trabalaho. O valor de prêmio é obtido pela consulta à tabela que se segue, na qual: \\ H = número de horas extras - (2/3 * (número de horas falta))
+  
+  
+    \begin{center}
+      \begin{tabular}[!h]{| c | c|}
+	\hline
+	H (Minutos) & Prêmio (R\$) \\ 
+	\hline
+	>= 2.400 & 500,00\\ 
+	\hline
+	1.800 <= H > 2.400  & 500,00\\ 
+	\hline
+	1.200 <= H > 1.800 & 500,00\\ 
+	\hline
+	600 <= H > 1.200 & 500,00\\ 
+	\hline
+	>= 2.400 & 500,00\\ 
+	\hline
+    
+      \end{tabular} 
+    
+    \end{center}
+    ~\newline
+  \end{exeenv}
+ 
+  \begin{exeenv}{3}
+    Faça um algoritmo que receba dois valores inteiros (num1 e num2) e mostre para o usuário se num1 é divisível por num2.
+  \end{exeenv}
+
+
+  
+\end{document}

@@ -1,0 +1,19 @@
+\documentclass[task]{IFCExams}
+
+\title{Informática}
+\subject{Editor de Texto - LibreOffice Writer}
+\author{Prof. Me. Hewerton Enes de Oliveira}
+\order{2}
+
+\begin{document}
+ 
+ \noindent
+ Utilizando o LibreOffice Writer faça as seguintes tarefas:
+ \begin{enumerate}
+  \item Faça uma pesquisa sobre 5 \emph{softwares} utilizados na Agronomia;
+  \item Faça um pequeno resumo sobre cada \emph{software} encontrado, utilize figuras e cite as fontes originais de cada;
+  \item 
+ \end{enumerate}
+
+ 
+\end{document}
