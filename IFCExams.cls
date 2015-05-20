@@ -36,7 +36,8 @@
 
 %%%%%%%%%%%%%%%%%% Packages and Settings %%%%%%%%%%%%%%%%%%
 % Page layout
-\RequirePackage[top=2cm,bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\RequirePackage[a4paper, top=2cm, left=2cm, right=2cm, footskip=0.5cm, includehead, includefoot]{geometry}
+\setlength{\parindent}{0cm}
 
 % Default packages
 \RequirePackage[brazilian]{babel}
@@ -48,7 +49,8 @@
 
 
 % algorithm2e package settings
-\RequirePackage[portuguese, boxed, titlenumbered, linesnumbered]{algorithm2e}
+\RequirePackage[portuguese, boxed, titlenumbered]{algorithm2e}
+\setlength{\algomargin}{2em}
 \SetKw{Declare}{Declare}
 \SetKw{Real}{Real}
 \SetKw{Int}{Inteiro}
@@ -64,9 +66,10 @@
 \newcommand{\order}[1]{\newcommand{\doc@order}{#1}}
 
 
-
+%% Exercises counter
 \newcounter{exes}
 \setcounter{exes}{0}
+
 \newenvironment{exeenv}[1]
 {
   \addtocounter{exes}{1}
@@ -81,14 +84,18 @@
 
 \newcommand{\question}[2]{
   \addtocounter{exes}{1}
-  \noindent
-  \textbf{Exercício \arabic{exes} ({#1} pts) - }{#2} ~\newline
+  \textbf{Questão \arabic{exes} ({#1} pts) - }{#2} ~\newline
+}
+
+\newcommand{\exe}[1]{
+  
+  \addtocounter{exes}{1}
+  \textbf{Exercício \arabic{exes} - }{#1} \hfill \newline
 }
 
 % Put indentification fields at the beginning of the document
 % This command is executed if the document is an exam, with a 'exam' option
 \newcommand{\identification}{
-  \noindent
   {\large Nome: \hrulefill  ~Matrícula: \rule{4cm}{.1mm}}%
   \par%
   \vskip 2ex%
@@ -100,19 +107,24 @@
 % Header configuration
 \fancyhead[R]{
   \@author \\
-  \doc@class \\
+  \ifthenelse{\isundefined{\doc@class}}{}{\doc@class} \\
   \doc@name~\ifthenelse{\isundefined{\doc@order}}{}{\doc@order} \\
   \doc@subject \\
   \@date}
 \fancyhead[L]{\includegraphics[width=5cm]{logo-ifc-parcial-nova-concordia.pdf}}
-\addtolength{\headheight}{70pt}
+\setlength{\headheight}{2.5cm}
 \renewcommand{\headrulewidth}{1pt}
+
+\fancyfoot[C] {}
+\fancyfoot[R] {\thepage}
+\renewcommand{\footrulewidth}{0.4pt}
 
 
 \AtBeginDocument{
   \maketitle
  
 }
+
 \renewcommand{\maketitle}{
   \ifthenelse{\equal{\doc@type}{exam}}{\identification}{}
   \ifthenelse{\equal{\doc@type}{task}}{
